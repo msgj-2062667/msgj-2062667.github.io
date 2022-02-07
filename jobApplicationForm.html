@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Job Application</title>
+    <link rel="stylesheet" type="text/css" href="formstyle.css" />
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+</head>
+<body>
+
+    <ul class="bar">
+        <li><a class="active" href="#Top">Home</a></li>
+        <li><a href="#Account">Account</a></li>
+        <li><a href="#Personal Info">Personal Information</a></li>
+        <li><a href="#Academic Info">Academic Information</a></li>
+        <li><a href="#Statement">Personal Statement</a></li>
+        <li><a href="#E-Signature">E-Signature</a></li>
+      </ul>
+
+      <br><br>
+
+<div class="container">
+    <h1 id="Top">Huskies Scholarship Application Form</h1>
+<p>&nbsp;</p>
+
+<br><br>
+
+<form role="form" action="http://gclass.alexburner.com/formtest.php" method="post">
+
+	<fieldset class="form-horizontal" >
+		<legend id="Account"><h2>Account</h2></legend>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">UW Net-ID</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="email">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Password</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="password" name="password">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Confirm Password</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="password" name="repeat_psw">
+			</div>
+		</div>
+        <br><br>
+	</fieldset>
+
+	<p>&nbsp;</p>
+
+	<fieldset class="form-horizontal" >
+		<legend id="Personal Info"><h2>Personal Information</h2></legend>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Full name</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="name">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">Street address</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="street">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">City</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="city">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">State</label>
+			<div class="col-sm-9">
+				<select class="form-control" name="state">
+					<option value="" selected="true">Choose a State</option>
+					<option value="AL">Alabama</option>
+					<option value="AK">Alaska</option>
+					<option value="AZ">Arizona</option>
+					<option value="AR">Arkansas</option>
+					<option value="CA">California</option>
+					<option value="CO">Colorado</option>
+					<option value="CT">Connecticut</option>
+					<option value="DE">Delaware</option>
+					<option value="DC">District of Columbia</option>
+					<option value="FL">Florida</option>
+					<option value="GA">Georgia</option>
+					<option value="HI">Hawaii</option>
+					<option value="ID">Idaho</option>
+					<option value="IL">Illinois</option>
+					<option value="IN">Indiana</option>
+					<option value="IA">Iowa</option>
+					<option value="KS">Kansas</option>
+					<option value="KY">Kentucky</option>
+					<option value="LA">Louisiana</option>
+					<option value="ME">Maine</option>
+					<option value="MD">Maryland</option>
+					<option value="MA">Massachusetts</option>
+					<option value="MI">Michigan</option>
+					<option value="MN">Minnesota</option>
+					<option value="MS">Mississippi</option>
+					<option value="MO">Missouri</option>
+					<option value="MT">Montana</option>
+					<option value="NE">Nebraska</option>
+					<option value="NV">Nevada</option>
+					<option value="NH">New Hampshire</option>
+					<option value="NJ">New Jersey</option>
+					<option value="NM">New Mexico</option>
+					<option value="NY">New York</option>
+					<option value="NC">North Carolina</option>
+					<option value="ND">North Dakota</option>
+					<option value="OH">Ohio</option>
+					<option value="OK">Oklahoma</option>
+					<option value="OR">Oregon</option>
+					<option value="PA">Pennsylvania</option>
+					<option value="RI">Rhode Island</option>
+					<option value="SC">South Carolina</option>
+					<option value="SD">South Dakota</option>
+					<option value="TN">Tennessee</option>
+					<option value="TX">Texas</option>
+					<option value="UT">Utah</option>
+					<option value="VT">Vermont</option>
+					<option value="VA">Virginia</option>
+					<option value="WA">Washington</option>
+					<option value="WV">West Virginia</option>
+					<option value="WI">Wisconsin</option>
+					<option value="WY">Wyoming</option>
+				</select>
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">ZIP</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="zip">
+			</div>
+		</div>
+        <br><br>
+        <div class="form-group">
+			<label class="col-sm-3 control-label">Phone Number</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="phone">
+			</div>
+        
+            <br><br>
+	</fieldset>
+
+	<p>&nbsp;</p>
+
+	<fieldset>
+		<legend id="Academic Info"><h2>Academic Information</h2></legend>
+        <br><br>
+		<div class="form-group row">
+			<label class="col-sm-12 control-label">Do you plan to enroll in the 2022-2023 academic year?</label>
+            <br><br>
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="radio">
+					<label>
+						<input type="radio" name="legal" value="yes">Yes
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="legal" value="no">No
+					</label>
+				</div>
+                <div class="radio">
+					<label>
+						<input type="radio" name="legal" value="not sure">Not sure yet
+					</label>
+				</div>
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group row">
+			<label class="col-sm-12 control-label">Which residence status you are?</label>
+            <br><br>
+			<div class="col-sm-offset-1 col-sm-11">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="position_pt" value="parttime">
+						US Citizen
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="position_ft" value="fulltime">
+						US Permanent Resident
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="position_sl" value="seasonal">
+						International Student
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="position_tp" value="temporary">
+						Not Indicated
+					</label>
+				</div>
+			</div>
+		</div>
+        <br><br>
+        <div class="form-group">
+			<label class="col-sm-3 control-label">Current Major</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="major">
+			</div>
+		</div>
+        <br><br>
+        <div class="form-group">
+			<label class="col-sm-3 control-label">Cumulative GPA</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="GPA">
+			</div>
+		</div>
+        <br><br>
+		<div class="form-group row">
+			<label class="col-sm-12 control-label">Activity / Experiences (If you not feel comfortable to answer it, just left it blank.)</label>
+			<div class="col-sm-12">
+				<table class="table table-bordered">
+					<tr>
+						<td></td>
+						<th><input type="word" name="word" placeholder="Activity 1"></th>
+						<th><input type="word" name="word" placeholder="Activity 2"></th>
+						<th><input type="word" name="word" placeholder="Activity 3"></th>
+					</tr>
+					<tr>
+						<th>From</th>
+						<td><input type="date" id="day" name="day"></td>
+                        <td><input type="date" id="day" name="day"></td>
+                        <td><input type="date" id="day" name="day"></td>
+					</tr>
+					<tr>
+						<th>Until</th>
+                        <td><input type="date" id="day" name="day"></td>
+                        <td><input type="date" id="day" name="day"></td>
+                        <td><input type="date" id="day" name="day"></td>
+					</tr>
+                    <tr>
+						<th>What you learned?</th>
+						<th><input type="sentence" name="word" placeholder="I learned..."></th>
+						<th><input type="sentence" name="word" placeholder="I learned..."></th>
+						<th><input type="sentence" name="word" placeholder="I learned..."></th>
+                    </tr>
+				</table>
+			</div>
+		</div>
+        <br><br>
+	</fieldset>
+
+	<p>&nbsp;</p>
+
+	<fieldset>
+		<legend id="Statement"><h2>Personal Statement</h2></legend>
+        <br><br>
+		<div class="form-group">
+			<label class="control-label">What is your college goals and choice of major, what you intend to do with your education. (Include any academic and non-academic accomplishments, personal characteristics, or experiences that make you uniquely worthy of scholarship consideration.)</label>
+			<textarea class="area" name="deserve" rows="6"></textarea>
+		</div>
+        <br><br>
+		<div class="form-group">
+			<label class="control-label">Why this scholarship is important to you?</label>
+			<textarea class="area" name="project" rows="6"></textarea>
+		</div>
+        <br><br>
+	</fieldset>
+
+	<p>&nbsp;</p>
+
+    <fieldset>
+		<legend id="E-Signature"><h2>Applicant's E-Signature</h2></legend>
+        <br><br>
+		<div class="form-group">
+            <label class="control-label">By signing (typing your legal name) in the space below, you are certifying that all information is correct and that you are the person completing this application.</label>
+            <br><br>
+            <input type="sign" name="E-Signature" placeholder="Sign here...">
+        </div>
+        <br><br>
+	</fieldset>
+
+    <br><br>
+
+	<input class="button" type="submit" value="Submit Form">
+
+	<p>&nbsp;</p>
+
+</form>
+</div><!-- close .container -->
+</body>
+</html>
